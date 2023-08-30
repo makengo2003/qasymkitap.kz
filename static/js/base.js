@@ -1,3 +1,15 @@
+function open_burger() {
+    document.getElementsByClassName("burger")[0].style.display = "flex"
+    document.getElementsByClassName("hamburger-menu")[0].src = "/static/imgs/x.png"
+    document.getElementsByClassName("hamburger-menu")[0].onclick = close_burger
+}
+
+function close_burger() {
+    document.getElementsByClassName("burger")[0].style.display = "none"
+    document.getElementsByClassName("hamburger-menu")[0].src = "/static/imgs/hamburger.png"
+    document.getElementsByClassName("hamburger-menu")[0].onclick = open_burger
+}
+
 function disable_a(book_id) {
     document.getElementById("book_" + book_id).removeAttribute("href")
 
@@ -54,7 +66,7 @@ function add_to_cart(book_id, count=1) {
         localStorage.setItem("cart", JSON.stringify([{"book_id": book_id, "count": count}]))
     }
 
-    alert("Корзинаға қосылды")
+    alert("Себетке салынды")
 }
 
 function book_in_wishlist(book_id) {
@@ -109,7 +121,7 @@ function leave_request_window_submit(event) {
             "X-CSRFToken": $cookies.get("csrftoken"),
         }
     }).then((response) => {
-        alert("Қабылданды, жауапты күтіңіз")
+        alert("Қабылданды, бірнеше минут ішінде менеджерлер хабарласады")
         close_request_form()
     })
 }

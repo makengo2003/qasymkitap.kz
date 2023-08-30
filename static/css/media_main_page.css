@@ -193,7 +193,7 @@
 
 	.offices-block .mobile_kz_map_img {
 		display: block;
-		margin-top: 0px;
+		margin-top: 20px;
 	}
 
 	.languages-block .text {
@@ -224,8 +224,7 @@
 	    padding: 30px;
 	}
 
-	.coffee-container h3 {
-	    width: inherit;
-	    margin-top: 15px;
+	.coffee-container h4 {
+	    width: 285px;
 	}
 }

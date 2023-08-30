@@ -22,7 +22,7 @@ document.getElementById("request-form").onsubmit = (event) => {
             "X-CSRFToken": $cookies.get("csrftoken"),
         }
     }).then((response) => {
-        alert("Қабылданды, жауапты күтіңіз")
+        alert("Қабылданды, бірнеше минут ішінде менеджерлер хабарласады")
         close_request_form()
     })
 }

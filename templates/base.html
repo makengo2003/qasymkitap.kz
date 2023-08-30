@@ -23,11 +23,11 @@
 			<div class="container navbar">
 				<a href="/"><img class="logo-img" src="/static/imgs/logo.png" alt=""></a>
 
-				<img src="/static/imgs/hamburger.png" alt="" class="hamburger-menu">
+				<img src="/static/imgs/hamburger.png" alt="" class="hamburger-menu" onclick="open_burger()">
 
 				<form action="/search/">
-					<input type="text" placeholder="Кітап аты немесе автор" name="search_input" value="{{ request.GET.search_input }}">
-					<button><span>Табу</span></button>
+					<input type="text" placeholder="Кітап аты/авторы" name="search_input" value="{{ request.GET.search_input }}">
+					<button><span>Іздеу</span></button>
 				</form>
 
 				<a href="/wishlist/" class="wishlist-btn">
@@ -37,9 +37,18 @@
 
 				<a href="/cart/" class="cart-btn">
 					<img src="/static/imgs/cart_logo.png" alt="">
-					<span>Корзина</span>
+					<span>Себет</span>
 				</a>
 			</div>
+
+			<form action="/search/" class="burger">
+				<div style="display: flex">
+					<input type="text" placeholder="Кітап аты/авторы" name="search_input" value="{{ request.GET.search_input }}">
+					<button>Іздеу</button>
+				</div>
+				<h3><a href="/wishlist/">Таңдаулы</a></h3>
+				<h3><a href="/cart/">Себет</a></h3>
+			</form>
 		</div>
 
 		{% block body %}
@@ -50,32 +59,32 @@
 		<div class="container footer-container">
 			<a href="/"><img src="/static/imgs/logo_white.png" alt=""></a>
 			<div class="contacts">
-				<h3>КОНТАКТІЛЕР</h3>
+				<h3>Бізбен байланыс</h3>
 				<p>info@qasymkitap.kz</p>
 				<p>8 700 982 63 35</p>
 			</div>
 
 			<div class="cities">
 				<div class="city">
-					<h3>Shymkent</h3>
-					<p>Қонаев көшесі, 48</p>
+					<h3>Қарағанды</h3>
+					<p>Бұхар жырау көшесі, 30 Язев, 11</p>
 				</div>
 
 				<div class="city">
-					<h3>Shymkent</h3>
-					<p>Бұхар жырау көшесі, 30 Язев, 11</p>
+					<h3>Алматы</h3>
+					<p>Наурызбай батыр көшесі, 47</p>
 				</div>
 			</div>
 
 			<div class="cities">
 				<div class="city">
-					<h3>Shymkent</h3>
+					<h3>Шымкент</h3>
 					<p>Қонаев көшесі, 48</p>
 				</div>
 
 				<div class="city">
-					<h3>Shymkent</h3>
-					<p>Қонаев көшесі, 48</p>
+					<h3>Тараз</h3>
+					<p>Төле би көшесі, 59</p>
 				</div>
 			</div>
 		</div>
@@ -106,8 +115,8 @@
 			<h5 style="margin-top: 20px">Барлығы: <span id="leave_request_window-sum_price"></span> тг</h5>
 
 			<div class="form" style="display: flex; flex-direction: column; margin-top: 15px">
-				<input type="text" placeholder="ФИО" id="leave_request_window-fullname">
-				<input type="text" placeholder="phone number" id="leave_request_window-phone_number">
+				<input type="text" placeholder="Аты-жөні" id="leave_request_window-fullname">
+				<input type="text" placeholder="Телефон нөмірі" id="leave_request_window-phone_number">
 
 				<button type="submit">Тапсырыс жасау</button>
 			</div>
@@ -124,8 +133,8 @@
 			</div>
 
 			<div class="form" style="display: flex; flex-direction: column; margin-top: 15px">
-				<input type="text" placeholder="ФИО" id="request-form-fullname">
-				<input type="text" placeholder="phone number" id="request-form-phone_number">
+				<input type="text" placeholder="Аты-жөні" id="request-form-fullname">
+				<input type="text" placeholder="Телефон нөмірі" id="request-form-phone_number">
 
 				<button>Тапсырыс жасау</button>
 			</div>

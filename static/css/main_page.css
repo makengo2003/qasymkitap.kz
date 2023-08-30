@@ -138,6 +138,7 @@
 .offices-block img {
 	margin-left: auto;
 	margin-top: 50px;
+	width: 700px;
 }
 
 .offices-block .text h3	{
@@ -256,7 +257,7 @@
 	margin: 0;
 }
 
-.coffee-container h3 {
+.coffee-container h4 {
 	width: 380px;
 	margin-top: 25px;
 	color: #6c6c6c;

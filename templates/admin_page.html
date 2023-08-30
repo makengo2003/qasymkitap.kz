@@ -50,18 +50,18 @@
 
 				<div class="admin_section">
 					<input type="radio" name="admin_section" id="users" value="requests" v-model="current_section" @change="open_section()">
-					<label for="users">Cұраулар</label>
+					<label for="users">Тапсырыстар</label>
 				</div>
 			</div>
 
 			<div class="admin_settings block">
 				<div class="admin_section" name="admin_section">
 					<input type="radio" name="admin_section" id="settings_section" value="settings" v-model="current_section" @change="open_section()">
-					<label for="settings_section">Настройки</label>
+					<label for="settings_section">Баптаулар</label>
 				</div>
 
 				<div class="quit">
-					<a href="{% url 'logout' %}">Выйти</a>
+					<a href="{% url 'logout' %}">Шығу</a>
 				</div>
 			</div>
 		</div>
@@ -118,7 +118,7 @@
 							</div>
 
 							<div class="categories_edit">
-								<a @click="open_product_form(product)">Изменить</a>
+								<a @click="open_product_form(product)">Өзгерту</a>
 							</div>
 						</div>
 					</div>
@@ -156,13 +156,13 @@
 								<input type="number" placeholder="Бағасы" required v-model="product_form['price']">
 							</div>
 							<div class="add_product block_css">
-								<b>Описание</b>
+								<b>Кітап жайлы</b>
 								<div id="product_form_description_editor"></div>
 							</div>
 
 							<div class="add_product characteristic">
 								<div class="characteristic_block">
-									<b>Название характеристики</b>
+									<b>Опция аты</b>
 
 									<div v-for="(option, key) in product_form['options']" :key="key" class="characteristic_block_div">
 										<input type="text" required v-model="option.label">
@@ -170,7 +170,7 @@
 								</div>
 
 								<div class="characteristic_block" style="border-left: 1px solid;">
-									<b>Значение характеристики</b>
+									<b>Опция мәні</b>
 
 									<div v-for="(option, option_index) in product_form['options']" class="characteristic_values" :key="option_index">
 										<input type="text" required v-model="option.value">
@@ -179,15 +179,15 @@
 								</div>
 							</div>
 
-							<button type="button" @click="add_product_option()" class="add_product_btn">Добавить опцию</button>
+							<button type="button" @click="add_product_option()" class="add_product_btn">Опция қосу</button>
 
 							<div class="add_product btns">
 								<div v-if="product_form.id">
-									<button class="add_btn" type="submit">Изменить</button>
+									<button class="add_btn" type="submit">Өзгерту</button>
 									<button class="delete_btn" type="button" @click="delete_product()">Удалить</button>
 								</div>
 								<div v-else>
-									<button class="add_btn" type="submit">Добавить проект</button>
+									<button class="add_btn" type="submit">Кітап қосу</button>
 								</div>
 							</div>
 						</div>
@@ -206,19 +206,19 @@
 					<label v-if="there_are_new_requests.books" for="books_requests_radio" style="font-size: 30px; margin-right: 5px; color: red">*</label>
 					<div class="main_container_section">
 						<input type="radio" id="books_requests_radio" name="requests_container_section" value="books" v-model="current_section" @change="open_section()">
-						<label for="books_requests_radio">Кітаптарға</label>
+						<label for="books_requests_radio">Кітаптар</label>
 					</div>
 
 					<label v-if="there_are_new_requests.languages" for="books_requests_radio" style="font-size: 30px; margin-right: 5px; color: red">*</label>
 					<div class="main_container_section">
 						<input type="radio" id="languages_requests_radio" name="requests_container_section" value="languages" v-model="current_section" @change="open_section()">
-						<label for="languages_requests_radio">Тілдерге</label>
+						<label for="languages_requests_radio">Тіл курстары</label>
 					</div>
 
 					<label v-if="there_are_new_requests.certificates" for="books_requests_radio" style="font-size: 30px; margin-right: 5px; color: red">*</label>
 					<div class="main_container_section">
 						<input type="radio" id="certificates_requests_radio" name="requests_container_section" value="certificates" v-model="current_section" @change="open_section()">
-						<label for="certificates_requests_radio">Сертификаттарға</label>
+						<label for="certificates_requests_radio">Сертификаттар</label>
 					</div>
 				</div>
 
@@ -226,19 +226,19 @@
 					<div class="categories_card_container">
 						<div class="categories_cards_parts">
 							<div class="categories_name categories_category">
-								<span>ФИО</span>
+								<span>Аты-жөні</span>
 							</div>
 
 							<div class="categories_category">
-								<span>Номер телефона</span>
+								<span>Телефон нөмірі</span>
 							</div>
 
 							<div class="categories_category">
-								<span>Время</span>
+								<span>Уақыты</span>
 							</div>
 
 							<div class="categories_category" v-if="current_section == 'books'">
-								<span>Заказ</span>
+								<span>Себетте</span>
 							</div>
 
 							<div class="categories_category" v-if="current_section == 'languages'">
@@ -266,8 +266,8 @@
 							<ul class="categories_category" style="font-size: 13px" v-if="current_section == 'languages'" v-html="request.request_text"></ul>
 
 							<div class="categories_edit">
-								<a v-if="!request.is_accepted" @click="accept_request(request)" style="background-color: green">Принять</a>
-								<span v-else style="color: green">Принято</span>
+								<a v-if="!request.is_accepted" @click="accept_request(request)" style="background-color: green">Қабылдау</a>
+								<span v-else style="color: green">Қабылданды</span>
 							</div>
 						</div>
 					</div>
@@ -279,10 +279,10 @@
 			<div class="main_container settings_container">
 				<div v-if="!settings_section_is_opened" class="set_menu">
 					<div class="set">
-						<a href="#change_password_window">Изменить пароль админа</a>
+						<a href="#change_password_window">Пароль өзгерту</a>
 					</div>
 					<div class="set">
-						<a @click="open_languages_form()">Тіл сабақтары</a>
+						<a @click="open_languages_form()">Тіл курстары</a>
 					</div>
 					<div class="set">
 						<a @click="open_carousel_images_form()">Карусель</a>
@@ -295,7 +295,7 @@
 
 				<div class="contacts_block" v-if="languages_form_is_opened" id="contacts_settings">
 					<div class="go_back">
-						<a @click="languages_form_is_opened = false">Назад</a>
+						<a @click="languages_form_is_opened = false">Артқа</a>
 					</div>
 
 					<form @submit.prevent="save_languages()" class="carousel_s_block">
@@ -303,13 +303,13 @@
 						<div class="contacts">
 							<div class="contact" v-for="language in languages_form">
 								<h3 style="width: 20%">${ language.label }</h3>
-								<input type="text" v-model="language.course_duration" placeholder="Курс ұзақтығы">
-								<input type="text" v-model="language.lessons_for_week" placeholder="Аптасына сабақ">
+								<input type="text" v-model="language.course_duration" placeholder="Ұзақтығы">
+								<input type="text" v-model="language.lessons_for_week" placeholder="Сабақ">
 							</div>
 						</div>
 
 						<div class="edit_btns">
-							<button type="submit" class="save" :disabled="!languages_form_is_opened">Сохранить</button>
+							<button type="submit" class="save" :disabled="!languages_form_is_opened">Сақтау</button>
 						</div>
 					</form>
 				</div>
@@ -321,7 +321,7 @@
 
 				<div class="carousel_block" v-if="carousel_images_form_is_opened">
 					<div class="go_back">
-						<a @click="carousel_images_form_is_opened = false">Назад</a>
+						<a @click="carousel_images_form_is_opened = false">Артқа</a>
 					</div>
 
 					<form @submit.prevent="save_carousel_images()" class="carousel_s_block">
@@ -334,11 +334,11 @@
 					  </div>
 
 						<div class="add_img">
-							<a @click="add_image()">Добавить изображение</a>
+							<a @click="add_image()">Сурет қосу</a>
 						</div>
 
 					  <div class="edit_btns">
-						<button type="submit" class="save" :disabled="!carousel_images_form_is_opened">Сохранить</button>
+						<button type="submit" class="save" :disabled="!carousel_images_form_is_opened">Сақтау</button>
 					  </div>
 					</form>
 				</div>
@@ -349,20 +349,20 @@
 			<form @submit.prevent="change_password_request()">
 				{% csrf_token %}
 				<div class="reg_block">
-					<b>Изменить пароль</b>
+					<b>Пароль өзгерту</b>
 
 					<div class="reg_inputs">
-						<span>Старый пароль</span>
+						<span>Ескі пароль</span>
 						<input type="password" v-model="ChangePasswordRequestSchema['old_password']" required>
 					</div>
 
 					<div class="reg_inputs">
-						<span>Новый пароль</span>
+						<span>Жаңа пароль</span>
 						<input type="password" v-model="ChangePasswordRequestSchema['new_password1']" required>
 					</div>
 
 					<div class="reg_inputs">
-						<span>Подтвердить пароль</span>
+						<span>Парольді растау</span>
 						<input type="password" v-model="ChangePasswordRequestSchema['new_password2']" required>
 					</div>
 
@@ -371,7 +371,7 @@
 					</ul>
 
 					<div class="reg_inputs" style="margin-top: 20px">
-						<button type="submit" id="change_password_form_submit_btn">Подтвердить</button>
+						<button type="submit" id="change_password_form_submit_btn">Парольді өзгерту</button>
 					</div>
 
 					<div class="close">
