@@ -18,28 +18,30 @@
                     <h4 style="margin-bottom: 0;">Себетте</h4>
                 </div>
 
-                <div class="table-row first-row">
-                    <p class="book-name"><b>Атауы</b></p>
-                    <p class="book-price"><b>Бағасы</b></p>
-                    <p class="book-count"><b>Саны</b></p>
-                    <p class="book-sum"><b>Соммасы</b></p>
-                    <button class="delete-btn" style="visibility: hidden;"></button>
-                </div>
-
-                <hr>
-
-                <div v-for="cart_item in cart_items">
-                    <div class="table-row">
-                        <div class="book-name">
-                            <div class="book_img" :style="'background-image: url(/media/' + cart_item.book.poster + ');'"></div>
-                            <p><a :href="'/book/' + cart_item.book.id + '/'" v-cloak>${ cart_item.book.name }</a></p>
-                        </div>
-                        <p class="book-price" v-cloak>${ cart_item.book.price }</p>
-                        <input type="number" v-model="cart_item.count" @change="update_cart_items_count()">
-                        <p class="book-sum" v-cloak>${ cart_item_total_price(cart_item) }</p>
-                        <button class="delete-btn" @click="delete_cart_item(cart_item)"></button>
+                <div class="table">
+                    <div class="table-row first-row">
+                        <p class="book-name"><b>Атауы</b></p>
+                        <p class="book-price"><b>Бағасы</b></p>
+                        <p class="book-count"><b>Саны</b></p>
+                        <p class="book-sum"><b>Соммасы</b></p>
+                        <button class="delete-btn" style="visibility: hidden;"></button>
                     </div>
+
                     <hr>
+
+                    <div v-for="cart_item in cart_items">
+                        <div class="table-row">
+                            <div class="book-name">
+                                <div class="book_img" :style="'background-image: url(/media/' + cart_item.book.poster + ');'"></div>
+                                <p><a :href="'/book/' + cart_item.book.id + '/'" v-cloak>${ cart_item.book.name }</a></p>
+                            </div>
+                            <p class="book-price" v-cloak>${ cart_item.book.price }</p>
+                            <input type="number" v-model="cart_item.count" @change="update_cart_items_count()">
+                            <p class="book-sum" v-cloak>${ cart_item_total_price(cart_item) }</p>
+                            <button class="delete-btn" @click="delete_cart_item(cart_item)"></button>
+                        </div>
+                        <hr>
+                    </div>
                 </div>
             </div>
 

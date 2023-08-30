@@ -26,8 +26,20 @@ class SiteSettingsServices {
         return axios.get("/api/site_settings/get_languages/").then(response => response.data)
     }
 
+    static get_tg_ids() {
+        return axios.get("/api/site_settings/get_tg_ids/").then(response => response.data)
+    }
+
     static save_delivery_price(delivery_price) {
         axios.post("/api/site_settings/save_delivery_price/", {delivery_price: delivery_price}, {
+            headers: {
+                "X-CSRFToken": $cookies.get("csrftoken"),
+            }
+        })
+    }
+
+    static save_tg_ids(tg_ids_form) {
+        axios.post("/api/site_settings/save_tg_ids/", tg_ids_form, {
             headers: {
                 "X-CSRFToken": $cookies.get("csrftoken"),
             }

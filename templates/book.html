@@ -17,14 +17,14 @@
 				</div>
 
 				<div style="display: flex; align-items: baseline;">
-					<input type="number" class="counter" placeholder="саны">
+					<input type="number" class="counter" placeholder="саны" value="1" onchange="handle_book_count_input(event)" id="book_count_input1">
 					<h3>{{ book.price }} тг</h3>
 				</div>
 
 				<div class="action_btns">
-					<input type="number" placeholder="саны" id="book_page_count_input">
-					<button class="buy_btn" onclick="buy_book({{ book.id }}, document.getElementById('book_page_count_input').value)">Тапсырыс беру</button>
-					<button class="cart_btn" onclick="add_to_cart({{ book.id }}, document.getElementById('book_page_count_input').value)">Себетке салу</button>
+					<input type="number" placeholder="саны" id="book_count_input2" value="1" onchange="handle_book_count_input(event)">
+					<button class="buy_btn" onclick="buy_book({{ book.id }}, document.getElementById('book_count_input2').value)">Тапсырыс беру</button>
+					<button class="cart_btn" onclick="add_to_cart({{ book.id }}, document.getElementById('book_count_input2').value)">Себетке салу</button>
 				</div>
 			</div>
 		</div>
@@ -51,3 +51,11 @@
 		</div>
 	</div>
 </div>
+
+
+<script>
+	function handle_book_count_input(event) {
+		document.getElementById("book_count_input1").value = event.target.value
+		document.getElementById("book_count_input2").value = event.target.value
+	}
+</script>

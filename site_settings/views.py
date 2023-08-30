@@ -36,6 +36,20 @@ def save_languages_view(request):
 
 @api_view(["GET"])
 @permission_classes([IsAdminUser])
+def get_tg_ids_view(_):
+    tg_ids = services.get_tg_ids()
+    return Response(tg_ids)
+
+
+@api_view(["POST"])
+@permission_classes([IsAdminUser])
+def save_tg_ids_view(request):
+    services.save_tg_ids(request.data.get("tg_ids", []))
+    return Response({"success": True})
+
+
+@api_view(["GET"])
+@permission_classes([IsAdminUser])
 def get_base_site_settings_view(_):
     base_site_settings = services.get_base_site_settings()
     return Response(base_site_settings)

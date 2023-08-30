@@ -193,6 +193,10 @@
 	    font-size: 15px;
 	}
 
+	.categories_block .category_card .category_card_img {
+		width: 95px;
+	}
+
 	.offices-block img {
 		display: none;
 	}

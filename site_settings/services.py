@@ -40,6 +40,21 @@ def save_languages(languages: Sequence) -> None:
         languages_json.write(json.dumps(languages))
 
 
+def get_tg_ids():
+    tg_ids = []
+
+    with open("site_settings/tg_ids.txt") as tg_ids_file:
+        for tg_id in tg_ids_file:
+            tg_ids.append(tg_id.strip())
+
+    return tg_ids
+
+
+def save_tg_ids(tg_ids_txt):
+    with open("site_settings/tg_ids.txt", "w") as tg_ids_file:
+        tg_ids_file.write(tg_ids_txt)
+
+
 def get_base_site_settings() -> Mapping:
     with open("site_settings/quadratic_meter.txt") as file:
         quadratic_meter = file.read()

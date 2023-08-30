@@ -4,6 +4,7 @@ settings_app = Vue.createApp({
             carousel_images_form_is_opened: false,
             delivery_price_setting_form_is_opened: false,
             languages_form_is_opened: false,
+            tg_ids_form_is_opened: false,
             guarantee_form_is_opened: false,
             guarantee_quill: null,
             about_us_form_is_opened: false,
@@ -11,6 +12,7 @@ settings_app = Vue.createApp({
             carousel_images: [],
             uploaded_images: {},
             delivery_price: 0,
+            tg_ids_form: "",
             languages_form: {
                 kazakh: {
                     "label": "ҚАЗАҚ ТІЛІ",
@@ -103,6 +105,19 @@ settings_app = Vue.createApp({
                 this.languages_form = data
             })
         },
+        open_tg_ids_form() {
+            this.tg_ids_form_is_opened = true
+
+            SiteSettingsServices.get_tg_ids().then((data) => {
+                var tg_ids = ""
+
+                for (var i = 0; i < data.length; i++) {
+                    tg_ids += `${ data[i] }\n`
+                }
+
+                this.tg_ids_form = tg_ids
+            })
+        },
         save_carousel_images() {
             SiteSettingsServices.save_carousel_images(this.uploaded_images, this.carousel_images).then((data) => {
                 this.carousel_images = []
@@ -118,6 +133,10 @@ settings_app = Vue.createApp({
         save_languages() {
             SiteSettingsServices.save_languages({languages: this.languages_form})
             this.languages_form_is_opened = false
+        },
+        save_tg_ids() {
+            SiteSettingsServices.save_tg_ids({tg_ids: this.tg_ids_form})
+            this.tg_ids_form_is_opened = false
         },
         handle_file_upload(image, event) {
             var file = event.target.files[0]
@@ -141,7 +160,7 @@ settings_app = Vue.createApp({
     },
     computed: {
         settings_section_is_opened() {
-            return (this.carousel_images_form_is_opened || this.delivery_price_setting_form_is_opened || this.languages_form_is_opened || this.about_us_form_is_opened || this.guarantee_form_is_opened)
+            return (this.carousel_images_form_is_opened || this.delivery_price_setting_form_is_opened || this.languages_form_is_opened || this.tg_ids_form_is_opened || this.about_us_form_is_opened || this.guarantee_form_is_opened)
         }
     }
 })

@@ -41,14 +41,11 @@
 				</a>
 			</div>
 
-			<form action="/search/" class="burger">
-				<div style="display: flex">
-					<input type="text" placeholder="Кітап аты/авторы" name="search_input" value="{{ request.GET.search_input }}">
-					<button>Іздеу</button>
-				</div>
+			<div action="/search/" class="burger">
+				<h3><a href="/">Басты бет</a></h3>
 				<h3><a href="/wishlist/">Таңдаулы</a></h3>
 				<h3><a href="/cart/">Себет</a></h3>
-			</form>
+			</div>
 		</div>
 
 		{% block body %}
@@ -106,7 +103,7 @@
 					<h5 style="margin-top: 0" id="leave_request_window-book_name"></h5>
 					<h6 id="leave_request_window-book_category"></h6>
 					<div style="display: flex; gap: 10px; margin-top: 10px">
-						<input type="number" class="book_count" placeholder="саны" onchange="handle_request_form_book_count()">
+						<input type="number" class="book_count" placeholder="саны" onchange="handle_request_form_book_count()" value="1">
 						<h5 id="leave_request_window-book_price"><span></span> тг</h5>
 					</div>
 				</div>
