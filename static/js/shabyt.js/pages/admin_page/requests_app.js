@@ -4,9 +4,9 @@ requests_app = Vue.createApp({
             requests: [],
             current_section: "books",
             there_are_new_requests: {
-                books: true,
+                books: false,
                 languages: false,
-                certificates: true,
+                certificates: false,
             }
         }
     },
