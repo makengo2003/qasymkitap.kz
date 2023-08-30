@@ -95,7 +95,7 @@
 	}
 
 	.languages-block .language_cards .language_card {
-	    width: 237px;
+	    width: 100%;
 	}
 
 	.languages-block .language_cards .language_card h1 {
@@ -164,7 +164,7 @@
 
 	.certificate-block {
 		height: 460px;
-		background-image: url("/static/imgs/mini_certificate_bg_img.png");
+		background-image: url("/static/imgs/mini_certificate_bg_img.jpg");
 		flex-direction: column;
 	}
 
@@ -207,7 +207,7 @@
 		align-items: baseline;
 	}
 
-	.languages-block .text h3 {
+	.languages-block .text p {
 	    margin-top: 10px;
 	    margin-left: 0px;
 	}
@@ -222,7 +222,7 @@
 	}
 
 	.coffee-block {
-		background-image: url(/static/imgs/coffee2.png);
+		background-image: url(/static/imgs/coffee2.jpg);
 		height: 465px;
 	}
 
