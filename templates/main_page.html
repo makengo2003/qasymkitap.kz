@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+	<link rel="stylesheet" href="/static/css/main_page.css">
+	<link rel="stylesheet" href="/static/css/media_main_page.css">
+{% endblock %}
+
+{% block body %}
+	<div class="block">
+		<div class="container slider_block">
+			<div class="sliders">
+				<div class="slider_indexes_block">
+					<div class="slider_indexes">
+						{% for img in carousel_imgs %}
+						<p class="slider_index{% if forloop.counter == 1 %} active_slider_index{% endif %}"></p>
+						{% endfor %}
+					</div>
+				</div>
+
+				{% for img in carousel_imgs %}
+				<a href="{{img.link}}" class="slider" style="background-image: url({{ img.image.url }})"></a>
+				{% endfor %}
+			</div>
+
+			<div class="categories_block">
+				<div onclick="window.location.href = '/category/?category=kz&order_by=-id'" class="category_card">
+					<h2>ҚАЗАҚ ӘДЕБИЕТІ</h2>
+					<div style="background-image: url(/static/imgs/abai.png);" class="category_card_img"></div>
+				</div>
+				<div onclick="window.location.href = '/category/?category=world&order_by=-id'" class="category_card">
+					<h2>ҚАЗАҚ ӘДЕБИЕТІ</h2>
+					<div style="background-image: url(/static/imgs/world.png);" class="category_card_img"></div>
+				</div>
+				<div onclick="window.location.href = '/category/?category=children&order_by=-id'" class="category_card" style="margin-bottom: 0px;">
+					<h2>ҚАЗАҚ ӘДЕБИЕТІ</h2>
+					<div style="background-image: url(/static/imgs/child.png);" class="category_card_img"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="container books-block">
+			<h3>ӨЗ ТАЛҒАМЫҢЫЗҒА САЙ КІТАП ТАҢДАҢЫЗ</h3>
+
+			{% include 'book_cards.html' %}
+
+			<div class="see_all_books_btn">
+				<button onclick="window.location.href = '/category/?category=kz&order_by=-id'" style="cursor: pointer">Барлығын қарау</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="container certificate-block">
+			<img src="/static/imgs/certificate_img.png" alt="">
+			<div class="text">
+				<h1>Жақыныңызға сертификат сыйлаңыз</h1>
+				<p>Оқырман дүкендер желісінен 2000, 5000 теңгелік сертификат алып, жақыныңызға сыйлаңыз</p>
+				<button onclick="open_certificates_request_form()">СЕРТИФИКАТ АЛУ</button>
+			</div>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="container offices-block">
+			<div class="text">
+				<h3>БІЗДІҢ МЕКЕН-ЖАЙЛАРЫМЫЗ</h3>
+				<p>Офлайн дүкендеріміз Қазақстанның 4 қаласында бар:</p>
+				
+				<img class="mobile_kz_map_img" src="/static/imgs/kz_map.png" alt="">
+
+				<div class="office" style="margin-top: 25px">
+					<h4 class="city">Қарағанды</h4>
+					<p class="address">Наурызбай батыр көшесі, 47</p>
+				</div>
+				<div class="office">
+					<h4 class="city">Almaty</h4>
+					<p class="address">Наурызбай батыр көшесі, 47</p>
+				</div>
+				<div class="office">
+					<h4 class="city">Almaty</h4>
+					<p class="address">Наурызбай батыр көшесі, 47</p>
+				</div>
+				<div class="office">
+					<h4 class="city">Almaty</h4>
+					<p class="address">Наурызбай батыр көшесі, 47</p>
+				</div>
+			</div>
+
+			<img src="/static/imgs/kz_map.png" alt="">
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="container languages-block">
+			<div class="languages_container">
+				<div class="text">
+					<h1>Тіл курстары</h1>
+					<h3>Өзіңізге керек тіл курсын таңдаңыз</h3>
+				</div>
+
+				<div class="language_cards">
+					{% for language in languages %}
+					<div class="language_card">
+						<h1>{{ language.label }}</h1>
+
+						<p>Аптасына: <b>{{ language.lessons_for_week }}</b></p>
+						<p>Ұзақтығы: <b>{{ language.course_duration }}</b></p>
+
+						<button onclick="open_languages_request_form('{{ language.label }}')">ЖАЗЫЛУ</button>
+
+						<img src="{{ language.poster }}" alt="">
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="block">
+		<div class="container coffee-block">
+			<div class="coffee-container">
+				<h2>КОФЕХАНАЛАР</h2>
+				<h3>Біздің кітап дүкендерімізде тек кітап оқып қоймай, кофе ішіп сергіп алсаңыздар болады.</h3>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/main_page/index.js"></script>
+{% endblock %}

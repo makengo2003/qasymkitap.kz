@@ -1,0 +1,108 @@
+body {
+	background: #f9f9f9;
+}
+
+.cart-block .blocks-container {
+	display: flex;
+	gap: 20px;
+}
+
+.cart-block .first-block, .cart-block .second-block {
+	width: 75%;
+	background: white;
+	padding: 20px;
+}
+
+.cart-block .second-block {
+	width: 25%;
+	height: fit-content;
+}
+
+.cart-block h4 {
+	margin-top: 0px;
+	margin-left: 5px;
+}
+
+.cart-block .table-row {
+	display: flex;
+	height: 40px;
+	align-items: center;
+	font-size: 13px;
+}
+
+.cart-block .first-row {
+	margin-bottom: 10px;
+	font-size: 15px;
+}
+
+.cart-block .table-row .book-name {
+	width: 40%;
+	display: flex; align-items: center;
+}
+
+.cart-block .book_img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 30px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.cart-block .table-row .book-price, .cart-block .table-row .book-sum {
+	width: 17%;
+}
+
+.cart-block .table-row .book-sum {
+	margin-left: auto;
+}
+
+.cart-block .table-row .book-count {
+	width: 11%;
+}
+
+.cart-block .table-row .delete-btn {
+	background-image: url(/static/imgs/delete.png);
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	width: 3%;
+	height: 23px;
+	border: none;
+}
+
+.cart-block .table-row input {
+	width: 40px;
+}
+
+body > div.main_content > div:nth-child(2) > div > div > div.first-block > hr:last-child {
+	display: none;
+}
+
+.cart-block hr {
+	opacity: 0.5;
+}
+
+.cart-block .second-block div {
+	display: flex;
+	width: 100%;
+	margin: 5px 0;
+}
+
+.cart-block .second-block div p:first-child {
+	opacity: 0.5;
+}
+
+.cart-block .second-block div p:nth-child(2n) {
+	margin-left: auto;
+}
+
+.cart-block .second-block button {
+	margin-top: 15px;
+	width: 100%;
+	height: 40px;
+	font-size: 15px;
+	border: none;
+	background-color: #f15d5b;
+	color: white;
+}

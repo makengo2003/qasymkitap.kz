@@ -1,0 +1,100 @@
+#book {
+	display: none;
+}
+
+.book-block .see_all_books_btn {
+	width: 100%;
+	text-align: center;
+	margin: 20px 0;
+}
+
+.book-block .see_all_books_btn button {
+	width: 170px;
+	height: 34px;
+	border: none;
+	border-radius: 5px;
+	background-color: black;
+	color: #e1dcdc;
+	font-size: 17px;
+}
+
+.book-block .book_main_block {
+	display: flex;
+}
+
+.book-block .book_poster_img {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+
+	width: 330px;
+	height: 450px;
+
+	margin-right: 50px;
+}
+
+.book-block .text {
+	width: 650px;
+}
+
+.book-block .option {
+	background-image: url(../imgs/option_line.png);
+	background-repeat: repeat-x;
+	background-position: bottom;
+	background-size: auto;
+
+	display: flex;
+}
+
+.book-block .option span {
+	background: white;
+}
+
+.book-block .option_label {
+	padding-right: 5px;
+	color: #D6D6D6;
+}
+
+.book-block .option_value {
+	margin-left: auto;
+	padding-left: 5px;
+	width: 50%;
+}
+
+.book-block .action_btns input {
+	width: 40px;
+	padding-left: 5px;
+	outline: none;
+	height: 28px;
+	font-size: 15px;
+}
+
+.book-block .text .counter {
+	width: 30px;
+	padding-left: 3px;
+	outline: none;
+	height: 20px;
+	font-size: 12px;
+	margin-right: 10px;	
+}
+
+.book-block .action_btns button {
+	padding: 8px 30px;
+}
+
+.book-block .action_btns .buy_btn {
+	color: white;
+	background-color: black;
+	border: 1px solid black;
+}
+
+.book-block .action_btns .cart_btn {
+	background-color: white;
+	border: 1px solid black;
+}
+
+
+
+.book-block .text .counter, .book-block .mobile_options {
+	display: none;
+}

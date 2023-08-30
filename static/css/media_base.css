@@ -1,0 +1,60 @@
+@media(max-width: 1100px) {
+	.container {
+		width: 850px;
+	}
+
+	.footer-container a img {
+		width: 180px;
+		margin-right: 35px;
+	}
+
+	.footer-block {
+		margin-top: 0px;
+	}
+}
+
+@media(max-width: 850px) {
+	.container {
+		width: 650px;
+	}
+
+	.navbar form, .navbar .wishlist-btn, .navbar .cart-btn {
+		display: none;
+	}
+
+	.footer-container {
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+
+	.footer-container .contacts {
+		width: 100%;
+	}
+
+	.footer-container * {
+		margin-left: 0;
+	}
+
+	.footer-block {
+		height: fit-content;
+	}
+
+	.hamburger-menu {
+		display: block;
+	}
+}
+
+
+@media(max-width: 670px) {
+	.container {
+		width: 350px;
+	}
+
+	.footer-container {
+	    gap: 15px;
+	}
+
+	.footer-container .cities p {
+	    margin-bottom: 15px;
+	}
+}

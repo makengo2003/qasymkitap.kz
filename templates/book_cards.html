@@ -1,0 +1,16 @@
+<div class="book_cards" id="book_cards">
+    {% for book in books %}
+    <a class="book_card" href="/book/{{book.id}}/" id="book_{{ book.id }}">
+        <div class="book_img" style="background-image: url(/media/{{ book.poster }})"></div>
+        <h4 class="book_name">{{ book.name }}</h4>
+        <span class="book_category">{{ book.category_label }}</span>
+        <h4 class="book_price"><span>{{ book.price }}</span> т</h4>
+
+        <div class="action_btns">
+            <button class="buy_btn" onmouseover="disable_a({{ book.id }})" onmouseout="enable_a({{ book.id }})" onclick="buy_book({{ book.id }})">Сатып алу</button>
+            <img class="cart_btn" onmouseover="disable_a({{ book.id }})" onmouseout="enable_a({{ book.id }})" src="/static/imgs/cart_logo2.png" class="cart_btn" onclick="add_to_cart({{ book.id }})">
+            <img class="wishlist_btn" onmouseover="disable_a({{ book.id }})" onmouseout="enable_a({{ book.id }})" src="/static/imgs/heart.png" class="wishlist_btn" onclick="book_in_wishlist({{ book.id }})" onload="check_book_in_wishlist({{ book.id }})">
+        </div>
+    </a>
+    {% endfor %}
+</div>

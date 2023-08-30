@@ -1,0 +1,21 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="user.models.Client.objects" />
+          <option value="django.contrib.auth.models.User.client" />
+          <option value="site_settings.models.Contact.objects" />
+          <option value="user.models.FavouriteProduct.objects" />
+          <option value="django.contrib.auth.models.User.favourites" />
+          <option value="booking.models.BookingRequest.objects" />
+          <option value="resident.models.Resident.objects" />
+          <option value="booking.models.BookedPlace.objects" />
+          <option value="typing.Mapping.aggregate" />
+          <option value="dict.get" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

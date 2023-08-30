@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>{% block title %}qasymkitap.kz{% endblock %}</title>
+
+	<link rel="stylesheet" href="/static/css/base.css">
+	<link rel="stylesheet" href="/static/css/media_base.css">
+	<link rel="stylesheet" href="/static/css/book_cards.css">
+	<link rel="stylesheet" href="/static/css/book.css">
+	<link rel="stylesheet" href="/static/css/media_book.css">
+	<script src="/static/js/base.js"></script>
+
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+	<div class="main_content">
+		<div class="block navbar-block">
+			<div class="container navbar">
+				<a href="/"><img class="logo-img" src="/static/imgs/logo.png" alt=""></a>
+
+				<img src="/static/imgs/hamburger.png" alt="" class="hamburger-menu">
+
+				<form action="/search/">
+					<input type="text" placeholder="Кітап аты немесе автор" name="search_input" value="{{ request.GET.search_input }}">
+					<button><span>Табу</span></button>
+				</form>
+
+				<a href="/wishlist/" class="wishlist-btn">
+					<img src="/static/imgs/wishlist_logo.png" alt="">
+					<span>Таңдаулы</span>
+				</a>
+
+				<a href="/cart/" class="cart-btn">
+					<img src="/static/imgs/cart_logo.png" alt="">
+					<span>Корзина</span>
+				</a>
+			</div>
+		</div>
+
+		{% block body %}
+		{% endblock %}
+	</div>
+
+	<div class="block footer-block">
+		<div class="container footer-container">
+			<a href="/"><img src="/static/imgs/logo_white.png" alt=""></a>
+			<div class="contacts">
+				<h3>КОНТАКТІЛЕР</h3>
+				<p>info@qasymkitap.kz</p>
+				<p>8 700 982 63 35</p>
+			</div>
+
+			<div class="cities">
+				<div class="city">
+					<h3>Shymkent</h3>
+					<p>Қонаев көшесі, 48</p>
+				</div>
+
+				<div class="city">
+					<h3>Shymkent</h3>
+					<p>Бұхар жырау көшесі, 30 Язев, 11</p>
+				</div>
+			</div>
+
+			<div class="cities">
+				<div class="city">
+					<h3>Shymkent</h3>
+					<p>Қонаев көшесі, 48</p>
+				</div>
+
+				<div class="city">
+					<h3>Shymkent</h3>
+					<p>Қонаев көшесі, 48</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="leave_request_window">
+		<form onsubmit="leave_request_window_submit(event)">
+			{% csrf_token %}
+			<input type="hidden" id="leave_request_window-book_id">
+			<div style="display: flex">
+				<h4 style="margin-top: 0">Тапсырыс беру</h4>
+				<img src="/static/imgs/x.png" onclick="close_request_form()" class="x_window">
+			</div>
+
+			<div style="display: flex; gap: 10px">
+				<div id="leave_request_window-book_poster"></div>
+
+				<div>
+					<h5 style="margin-top: 0" id="leave_request_window-book_name"></h5>
+					<h6 id="leave_request_window-book_category"></h6>
+					<div style="display: flex; gap: 10px; margin-top: 10px">
+						<input type="number" class="book_count" placeholder="саны" onchange="handle_request_form_book_count()">
+						<h5 id="leave_request_window-book_price"><span></span> тг</h5>
+					</div>
+				</div>
+			</div>
+
+			<h5 style="margin-top: 20px">Барлығы: <span id="leave_request_window-sum_price"></span> тг</h5>
+
+			<div class="form" style="display: flex; flex-direction: column; margin-top: 15px">
+				<input type="text" placeholder="ФИО" id="leave_request_window-fullname">
+				<input type="text" placeholder="phone number" id="leave_request_window-phone_number">
+
+				<button type="submit">Тапсырыс жасау</button>
+			</div>
+		</form>
+	</div>
+
+	<div id="request-form">
+		<form action="/request/">
+			<input type="hidden" id="request-form-category">
+			<input type="hidden" id="request-form-language">
+			<div style="display: flex">
+				<h4 style="margin-top: 0">Тапсырыс қалдыру</h4>
+				<img src="/static/imgs/x.png" onclick="close_request_form()" class="x_window">
+			</div>
+
+			<div class="form" style="display: flex; flex-direction: column; margin-top: 15px">
+				<input type="text" placeholder="ФИО" id="request-form-fullname">
+				<input type="text" placeholder="phone number" id="request-form-phone_number">
+
+				<button>Тапсырыс жасау</button>
+			</div>
+		</form>
+	</div>
+
+    <script src="/static/js/shabyt.js/packages/vue.global.prod.js"></script>
+	<script src="/static/js/shabyt.js/packages/vue-cookies.js"></script>
+	<script src="/static/js/shabyt.js/packages/axios.min.js"></script>
+
+	{% block scripts %}
+    {% endblock %}
+
+	<script>
+		window.location.hash = ""
+	</script>
+</body>
+</html>

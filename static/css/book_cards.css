@@ -1,0 +1,88 @@
+.book_cards {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.book_cards .book_card {
+	display: block;
+	width: 160px;
+    padding: 20px 22px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px gray;
+    text-decoration: none;
+    color: black;
+    position: relative;
+}
+
+.book_cards .book_card .book_name {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.book_cards .book_card .book_price {
+	margin: 7px 0;
+}
+
+.book_cards .book_card .book_category {
+	font-size: 13px;
+	opacity: 0.5;
+}
+
+.book_cards .book_card .action_btns .buy_btn {
+	background-color: #f15d5b;
+	color: white;
+	padding: 5px 14px;
+	border: none;
+	border-radius: 5px;
+}
+
+.book_cards .book_card .action_btns {
+	display: flex;
+	height: 25px;
+	gap: 5px;
+}
+
+.book_cards .book_card .action_btns .cart_btn {
+	background-color: white;
+	border: 1px solid #f15d5b;
+	border-radius: 5px;
+	height: 70%;
+	padding: 3px;
+}
+
+.book_cards .book_card .action_btns .wishlist_btn {
+	position: absolute;
+    width: 22px;
+    top: 15px;
+    right: 15px;
+}
+
+.book_cards .book_card .book_img {
+	width: 100%;
+	height: 170px;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+@media(max-width: 1100px) {
+    .book_cards .book_card {
+		width: 153px;
+	}
+}
+
+@media(max-width: 850px) {
+	.book_cards .book_card {
+		width: 159px;
+	}
+}
+
+
+@media(max-width: 670px) {
+    .book_cards .book_card {
+		width: 121px;
+	}
+}

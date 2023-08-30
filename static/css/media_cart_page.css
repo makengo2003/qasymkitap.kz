@@ -1,0 +1,65 @@
+@media(max-width: 1100px) {
+	.cart-block .table-row .delete-btn {
+		height: 17px;
+	}
+}
+
+@media(max-width: 850px) {
+	.cart-block .blocks-container {
+		flex-direction: column-reverse;
+	}
+
+	.cart-block .first-block, .cart-block .second-block {
+		width: 94%;
+	}
+
+	.cart-block .table-row .delete-btn {
+		height: 19px;
+	}
+}
+
+@media(max-width: 670px) {
+	.cart-block .first-block, .cart-block .second-block {
+		width: 89%;
+	}
+
+	.cart-block .table-row .delete-btn {
+		height: 15px;
+		width: 15px;
+	}
+
+	.cart-block .table-row {
+		font-size: 10px;
+	}
+
+	.cart-block .table-row input {
+		width: 25px;
+		font-size: 12px;
+	}
+
+	.cart-block .first-row {
+		margin-bottom: 5px;
+		font-size: 12px;
+	}
+
+	.cart-block .first-row .book-name {
+		width: 40%;
+	}
+
+	.cart-block .table-row .book-price {
+		width: 15%;
+	}
+
+	.cart-block .table-row .book-count {
+		width: fit-content;
+	}
+
+	.cart-block .table-row .book-sum {
+		width: initial;
+		margin-right: 10px;
+	}
+
+	.cart-block .first-row .book-sum {
+		margin-right: 4px;
+	}
+}

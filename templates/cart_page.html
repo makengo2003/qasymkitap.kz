@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+<link rel="stylesheet" href="/static/css/cart_page.css">
+<link rel="stylesheet" href="/static/css/media_cart_page.css">
+{% endblock %}
+
+{% block body %}
+<div class="block">
+    <div class="container cart-block">
+        <h2>Моя корзина</h2>
+
+        <div class="blocks-container" id="cart_app">
+            <div class="first-block">
+                <div style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <img src="/static/imgs/pink_cart.png" alt="" height="25">
+                    <h4 style="margin-bottom: 0;">В корзине</h4>
+                </div>
+
+                <div class="table-row first-row">
+                    <p class="book-name"><b>Названия</b></p>
+                    <p class="book-price"><b>Цена</b></p>
+                    <p class="book-count"><b>Количество</b></p>
+                    <p class="book-sum"><b>Сумма</b></p>
+                    <button class="delete-btn" style="visibility: hidden;"></button>
+                </div>
+
+                <hr>
+
+                <div v-for="cart_item in cart_items">
+                    <div class="table-row">
+                        <div class="book-name">
+                            <div class="book_img" :style="'background-image: url(/media/' + cart_item.book.poster + ');'"></div>
+                            <p><a :href="'/book/' + cart_item.book.id + '/'" v-cloak>${ cart_item.book.name }</a></p>
+                        </div>
+                        <p class="book-price" v-cloak>${ cart_item.book.price }</p>
+                        <input type="number" v-model="cart_item.count" @change="update_cart_items_count()">
+                        <p class="book-sum" v-cloak>${ cart_item_total_price(cart_item) }</p>
+                        <button class="delete-btn" @click="delete_cart_item(cart_item)"></button>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+
+            <div class="second-block">
+                <h4>Итого</h4>
+                
+                <hr>
+                
+                <div>
+                    <p>Количество книг:</p>
+                    <p v-cloak>${ total_books_count() }</p>
+                </div>
+
+                <div>
+                    <p>Барлығы:</p>
+                    <p v-cloak>${ total_price() } тг</p>
+                </div>
+
+                <hr>
+
+                <button @click="buy">Тапсырыс беру</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/cart_page/index.js"></script>
+{% endblock %}

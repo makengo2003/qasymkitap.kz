@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+	<link rel="stylesheet" href="/static/css/category_page.css">
+	<link rel="stylesheet" href="/static/css/pagination.css">
+{% endblock %}
+
+{% block body %}
+	<div class="block">
+		<div class="container books-block">
+			<div class="filtration_form">
+                <select name="category" id="book_category">
+                    <option value="kz" selected>Әдебиет</option>
+                    <option value="world">Әлем әдебиеті</option>
+                    <option value="children">Балалар әдебиеті</option>
+                </select>
+
+                <select name="order_by" id="book_order_by">
+                    <option value="price" selected>Арзаннан қымбатқа</option>
+                    <option value="-price">Қымбаттан арзанға</option>
+                    <option value="-id">Жаңа</option>
+                </select>
+
+<!--                <select name="author" id="book_authors">-->
+<!--                    <option value="" selected>Abai</option>-->
+<!--                    <option value="">Бауыржан Момышұлы</option>-->
+<!--                    <option value="">Mukhtar Auezov</option>-->
+<!--                </select>-->
+			</div>
+
+            <div id="books">
+			    {% include 'book_cards.html' %}
+            </div>
+
+            <div id="pagination"></div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/static/js/shabyt.js/packages/vue.global.prod.js"></script>
+<script src="/static/js/shabyt.js/packages/vue-cookies.js"></script>
+<script src="/static/js/shabyt.js/packages/axios.min.js"></script>
+    <script src="/static/js/packages/jquery.min.js"></script>
+    <script src="/static/js/packages/pagination.js"></script>
+    <script src="/static/js/category_page/index.js"></script>
+{% endblock %}
