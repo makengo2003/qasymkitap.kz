@@ -130,13 +130,18 @@
 	.coffee-container h2 {
 		font-size: 20px;
 	}
+
+	#books-block-main-page form {
+	    display: flex;
+    }
 }
 
 @media(max-width: 670px) {
 	.slider_block {
 		flex-direction: column;
 		gap: 10px;
-		height: 300px;
+		height: 355px;
+		margin-bottom: 20px;
 	}
 
 	.categories_block {
@@ -154,6 +159,7 @@
 	.categories_block .category_card {
 		width: 170px;
 		height: initial;
+		margin-bottom: 0px;
 	}
 
 	.certificate-block {
@@ -212,7 +218,7 @@
 	}
 
 	.languages-block {
-	    height: 1650px;
+	    height: 1700px;
 	}
 
 	.coffee-block {
