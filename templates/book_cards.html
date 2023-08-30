@@ -4,7 +4,9 @@
     {% for book in books %}
     <a class="book_card" href="/book/{{book.id}}/" id="book_{{ book.id }}">
         <div class="book_img" style="background-image: url(/media/{{ book.poster }})"></div>
-        <h4 class="book_name">{{ book.name }}</h4>
+        <div class="book_name_pre_block">
+            <h4 class="book_name">{{ book.name }}</h4>
+        </div>
         <span class="book_category">{{ book.category_label }}</span>
         <h4 class="book_price"><span>{{ book.price }}</span> т</h4>
 

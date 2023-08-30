@@ -29,7 +29,7 @@ base_product_form = {
     poster: "",
     description: "",
     price: 0,
-    options: [{label: "", value: ""}],
+    options: [{label: "Категория", value: ""}, {label: "Автор", value: ""}, {label: "Мұқаба", value: ""}],
     on_submit: false,
 }
 

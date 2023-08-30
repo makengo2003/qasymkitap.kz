@@ -15,9 +15,18 @@
     position: relative;
 }
 
+.book_cards .book_card .book_name_pre_block {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    min-height: 35px;
+}
+
 .book_cards .book_card .book_name {
 	margin-top: 20px;
 	margin-bottom: 0px;
+	font-size: 15px;
 }
 
 .book_cards .book_card .book_price {
