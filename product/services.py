@@ -45,7 +45,7 @@ def edit_product(product_id: int, data: Mapping, files: Mapping) -> None:
 
 def search_books(search_input, serialize=True):
     words = search_input.split()
-    icontains_filters = [Q(name_lower__icontains=query.lower()) for query in words]
+    icontains_filters = [Q(name_lower__icontains=query.lower()) | Q(author_lower__icontains=query.lower()) for query in words]
     combined_filter = functools.reduce(lambda a, b: a | b, icontains_filters)
     products = Product.objects.filter(combined_filter).defer("description").order_by("-id").values()
     serializer = ProductsSerializer(products, many=True)
