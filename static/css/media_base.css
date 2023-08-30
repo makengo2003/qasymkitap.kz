@@ -41,6 +41,8 @@
 
 	.hamburger-menu {
 		display: block;
+        height: 30px;
+        margin: auto 0 auto auto;
 	}
 }
 
