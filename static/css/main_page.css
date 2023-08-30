@@ -89,7 +89,7 @@
 }
 
 .see_all_books_btn button {
-	width: 170px;
+	width: 190px;
 	height: 34px;
 	border: none;
 	border-radius: 5px;
@@ -257,10 +257,11 @@
 	margin: 0;
 }
 
-.coffee-container h4 {
-	width: 380px;
+.coffee-container p {
+	width: 400px;
 	margin-top: 25px;
 	color: #6c6c6c;
+	font-size: 18px;
 }
 
 .mobile_kz_map_img {
