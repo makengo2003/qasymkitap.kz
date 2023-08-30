@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block body %}
 	<div class="block">
 		<div class="container books-block">
 			<div style="display: flex; margin: 0px 0px 20px 0">
-				<img src="/static/imgs/heart2.png" alt="" style="height: 20px; margin-right: 8px">
+				<img src="{% static 'imgs/heart2.png' %}" alt="" style="height: 20px; margin-right: 8px">
 				<h3 style="margin: 0px">Таңдаулы кітаптар</h3>
 			</div>
 
@@ -16,5 +17,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/js/wishlist_page/index.js"></script>
+<script src="{% static 'js/wishlist_page/index.js' %}"></script>
 {% endblock %}

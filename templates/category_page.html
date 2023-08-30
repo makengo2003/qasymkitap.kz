@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block styles %}
-	<link rel="stylesheet" href="/static/css/category_page.css">
-	<link rel="stylesheet" href="/static/css/pagination.css">
+	<link rel="stylesheet" href="{% static 'css/category_page.css' %}">
+	<link rel="stylesheet" href="{% static 'css/pagination.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -38,10 +39,10 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/js/shabyt.js/packages/vue.global.prod.js"></script>
-<script src="/static/js/shabyt.js/packages/vue-cookies.js"></script>
-<script src="/static/js/shabyt.js/packages/axios.min.js"></script>
-    <script src="/static/js/packages/jquery.min.js"></script>
-    <script src="/static/js/packages/pagination.js"></script>
-    <script src="/static/js/category_page/index.js"></script>
+<script src="{% static 'js/shabyt.js/packages/vue.global.prod.js' %}"></script>
+<script src="{% static 'js/shabyt.js/packages/vue-cookies.js' %}"></script>
+<script src="{% static 'js/shabyt.js/packages/axios.min.js' %}"></script>
+    <script src="{% static 'js/packages/jquery.min.js' %}"></script>
+    <script src="{% static 'js/packages/pagination.js' %}"></script>
+    <script src="{% static 'js/category_page/index.js' %}"></script>
 {% endblock %}

@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block styles %}
-<link rel="stylesheet" href="/static/css/cart_page.css">
-<link rel="stylesheet" href="/static/css/media_cart_page.css">
+<link rel="stylesheet" href="{% static 'css/cart_page.css' %}">
+<link rel="stylesheet" href="{% static 'css/media_cart_page.css' %}">
 {% endblock %}
 
 {% block body %}
@@ -13,7 +14,7 @@
         <div class="blocks-container" id="cart_app">
             <div class="first-block">
                 <div style="display: flex; align-items: center; margin-bottom: 15px;">
-                    <img src="/static/imgs/pink_cart.png" alt="" height="25">
+                    <img src="{% static 'imgs/pink_cart.png' %}" alt="" height="25">
                     <h4 style="margin-bottom: 0;">В корзине</h4>
                 </div>
 
@@ -67,5 +68,5 @@
 {% endblock %}
 
 {% block scripts %}
-<script src="/static/js/cart_page/index.js"></script>
+<script src="{% static 'js/cart_page/index.js' %}"></script>
 {% endblock %}

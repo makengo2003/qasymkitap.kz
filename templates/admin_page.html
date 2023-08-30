@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +7,29 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>shabyt.com dashboard</title>
 
-	<link rel="stylesheet" href="/static/css/shabyt.css/baspa.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_all_goods.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_categories.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_analytics.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/about_order.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/profile.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_order.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_checkbox.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_settings.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/window.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_add_category.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/adminka_add_product.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/quill.snow.css">
-	<link rel="stylesheet" href="/static/css/shabyt.css/default.min.css">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/baspa.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_all_goods.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_categories.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_analytics.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/about_order.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/profile.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_order.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_checkbox.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_settings.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/window.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_add_category.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/adminka_add_product.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/quill.snow.css' %}">
+	<link rel="stylesheet" href="{% static 'css/shabyt.css/default.min.css' %}">
 
-	<script src="/static/js/shabyt.js/packages/highlight.min.js"></script>
-	<script src="/static/js/shabyt.js/packages/axios.min.js"></script>
-	<script src="/static/js/shabyt.js/packages/quill.js"></script>
-	<script src="/static/js/shabyt.js/packages/image-resize.min.js"></script>
-	<script src="/static/js/shabyt.js/packages/sweetalert.min.js"></script>
-	<script src="/static/js/shabyt.js/packages/vue.global.prod.js"></script>
-	<script src="/static/js/shabyt.js/packages/vue-cookies.js"></script>
-	<script src="/static/js/shabyt.js/packages/quill.imageCompressor.min.js"></script>
+	<script src="{% static 'js/shabyt.js/packages/highlight.min.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/packages/axios.min.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/packages/quill.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/packages/image-resize.min.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/packages/sweetalert.min.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/packages/vue.global.prod.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/packages/vue-cookies.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/packages/quill.imageCompressor.min.js' %}"></script>
 </head>
 <body style="font-family: sans-serif">
 	<div class="window">
@@ -172,7 +174,7 @@
 
 									<div v-for="(option, option_index) in product_form['options']" class="characteristic_values" :key="option_index">
 										<input type="text" required v-model="option.value">
-										<button type="button" @click="delete_option(option)"><img src="/static/imgs/shabyt.imgs/delete.png" style="width: 20px; height: 20px"></button>
+										<button type="button" @click="delete_option(option)"><img src="{% static 'imgs/shabyt.imgs/delete.png' %}" style="width: 20px; height: 20px"></button>
 									</div>
 								</div>
 							</div>
@@ -191,7 +193,7 @@
 						</div>
 
 						<div class="close">
-							<a onclick='document.getElementById("product_form_window").style.display = "none"'><img src="/static/imgs/shabyt.imgs/cross.png" alt=""></a>
+							<a onclick='document.getElementById("product_form_window").style.display = "none"'><img src="{% static 'imgs/shabyt.imgs/cross.png' %}" alt=""></a>
 						</div>
 					</form>
 				</div>
@@ -328,7 +330,7 @@
 						  <input placeholder="Ссылка" type="text" v-model="image.link">
 						<input type="file" @change="handle_file_upload(image, $event)" :required="image.image == ''" :style="[image.image != null && !image_is_uploaded_to_input(image) ? {'width': 'initial'} : {'width': '100%'}]">
 						<span v-if="image.image != null && !image_is_uploaded_to_input(image)">Текущий: <a :href="image.image" v-cloak>${ image.image }</a></span>
-						<button type="button" @click="delete_image(key)"><img src="/static/imgs/shabyt.imgs/delete.png"></button>
+						<button type="button" @click="delete_image(key)"><img src="{% static 'imgs/shabyt.imgs/delete.png' %}"></button>
 					  </div>
 
 						<div class="add_img">
@@ -373,7 +375,7 @@
 					</div>
 
 					<div class="close">
-						<a href="#"><img src="/static/imgs/shabyt.imgs/cross.png" alt=""></a>
+						<a href="#"><img src="{% static 'imgs/shabyt.imgs/cross.png' %}" alt=""></a>
 					</div>
 				</div>
 			</form>
@@ -381,17 +383,17 @@
 	</div>
 
 
-	<script src="/static/js/shabyt.js/services/product_services.js"></script>
-	<script src="/static/js/shabyt.js/services/site_settings_services.js"></script>
+	<script src="{% static 'js/shabyt.js/services/product_services.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/services/site_settings_services.js' %}"></script>
 
-	<script src="/static/js/shabyt.js/pages/admin_page/products_app.js"></script>
-	<script src="/static/js/shabyt.js/pages/admin_page/requests_app.js"></script>
-	<script src="/static/js/shabyt.js/pages/admin_page/settings_app.js"></script>
+	<script src="{% static 'js/shabyt.js/pages/admin_page/products_app.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/pages/admin_page/requests_app.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/pages/admin_page/settings_app.js' %}"></script>
 
-	<script src="/static/js/shabyt.js/pages/admin_page/vertical_menu_app.js"></script>
+	<script src="{% static 'js/shabyt.js/pages/admin_page/vertical_menu_app.js' %}"></script>
 
-	<script src="/static/js/shabyt.js/auth/index.js"></script>
-	<script src="/static/js/shabyt.js/auth/vue_apps.js"></script>
-	<script src="/static/js/shabyt.js/services/user_services.js"></script>
+	<script src="{% static 'js/shabyt.js/auth/index.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/auth/vue_apps.js' %}"></script>
+	<script src="{% static 'js/shabyt.js/services/user_services.js' %}"></script>
 </body>
 </html>

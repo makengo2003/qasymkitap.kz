@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block body %}
 	<div class="block">
 		<div class="container books-block">
 			<div style="display: flex; margin: 0px 0px 20px 0">
-				<img src="/static/imgs/search.png" alt="" style="height: 20px; margin-right: 8px">
+				<img src="{% static 'imgs/search.png' %}" alt="" style="height: 20px; margin-right: 8px">
 				<h3 style="margin: 0px">Іздеу жауабы</h3>
 			</div>
 
