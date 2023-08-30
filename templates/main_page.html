@@ -40,8 +40,12 @@
 		</div>
 	</div>
 
-	<div class="block">
+	<div class="block" id="books-block-main-page">
 		<div class="container books-block">
+			<form action="/search/">
+				<input type="text" placeholder="Кітап аты/авторы" name="search_input" value="{{ request.GET.search_input }}">
+				<button><span>Іздеу</span></button>
+			</form>
 			<h3>ӨЗ ТАЛҒАМЫҢЫЗҒА САЙ КІТАП ТАҢДАҢЫЗ</h3>
 
 			{% include 'book_cards.html' %}
