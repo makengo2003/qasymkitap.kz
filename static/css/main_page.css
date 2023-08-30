@@ -99,7 +99,7 @@
 }
 
 .certificate-block {
-	background-image: url("../imgs/certificate_bg_img.png");
+	background-image: url("/static/imgs/certificate_bg_img.png");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;
@@ -240,7 +240,7 @@
 }
 
 .coffee-block {
-	background-image: url(../imgs/coffee.png);
+	background-image: url(/static/imgs/coffee.png);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: contain;

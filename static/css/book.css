@@ -38,7 +38,7 @@
 }
 
 .book-block .option {
-	background-image: url(../imgs/option_line.png);
+	background-image: url(/static/imgs/option_line.png);
 	background-repeat: repeat-x;
 	background-position: bottom;
 	background-size: auto;

@@ -1,16 +1,16 @@
 @font-face {
   font-family: Geometria-Regular;
-  src: url(../fonts/Geometria-Regular.ttf);
+  src: url(/static/fonts/Geometria-Regular.ttf);
 }
 
 @font-face {
   font-family: Geometria-Medium;
-  src: url(../fonts/Geometria-Medium.ttf);
+  src: url(/static/fonts/Geometria-Medium.ttf);
 }
 
 @font-face {
   font-family: Geometria-Bold;
-  src: url(../fonts/Geometria-Bold.ttf);
+  src: url(/static/fonts/Geometria-Bold.ttf);
 }
 
 body {

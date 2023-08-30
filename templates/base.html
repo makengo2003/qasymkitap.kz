@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,12 +7,12 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>{% block title %}qasymkitap.kz{% endblock %}</title>
 
-	<link rel="stylesheet" href="/static/css/base.css">
-	<link rel="stylesheet" href="/static/css/media_base.css">
-	<link rel="stylesheet" href="/static/css/book_cards.css">
-	<link rel="stylesheet" href="/static/css/book.css">
-	<link rel="stylesheet" href="/static/css/media_book.css">
-	<script src="/static/js/base.js"></script>
+	<link rel="stylesheet" href="{% static 'css/base.css' %}">
+	<link rel="stylesheet" href="{% static 'css/media_base.css' %}">
+	<link rel="stylesheet" href="{% static 'css/book_cards.css' %}">
+	<link rel="stylesheet" href="{% static 'css/book.css' %}">
+	<link rel="stylesheet" href="{% static 'css/media_book.css' %}">
+	<script src="{% static 'js/base.js' %}"></script>
 
     {% block styles %}
     {% endblock %}
@@ -130,9 +132,9 @@
 		</form>
 	</div>
 
-    <script src="/static/js/shabyt.js/packages/vue.global.prod.js"></script>
-	<script src="/static/js/shabyt.js/packages/vue-cookies.js"></script>
-	<script src="/static/js/shabyt.js/packages/axios.min.js"></script>
+    <script src="{% static '/static/js/shabyt.js/packagesglobal.prod.js' %}"></script>
+	<script src="{% static '/static/js/shabyt.jsvue-cookies.js' %}"></script>
+	<script src="{% static '/static/js/shabyt.jsaxios.min.js' %}"></script>
 
 	{% block scripts %}
     {% endblock %}
