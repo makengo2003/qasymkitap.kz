@@ -24,7 +24,7 @@
 				<div class="action_btns">
 					<input type="number" placeholder="саны" id="book_page_count_input">
 					<button class="buy_btn" onclick="buy_book({{ book.id }}, document.getElementById('book_page_count_input').value)">Тапсырыс беру</button>
-					<button class="cart_btn" onclick="add_to_cart({{ book.id }}, document.getElementById('book_page_count_input').value)">Корзинаға салу</button>
+					<button class="cart_btn" onclick="add_to_cart({{ book.id }}, document.getElementById('book_page_count_input').value)">Себетке салу</button>
 				</div>
 			</div>
 		</div>
@@ -42,7 +42,7 @@
 
 		<div>{% autoescape off %}{{ book.description }}{% endautoescape %}</div>
 
-		<h3>ОСЫ КАТЕГОРИЯДАҒЫ КІТАПТАР</h3>
+		<h3>КАТЕГОРИЯДАҒЫ КІТАПТАР</h3>
 
 		{% include 'book_cards.html' %}
 

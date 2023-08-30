@@ -37,7 +37,7 @@ settings_app = Vue.createApp({
                     "poster": "/static/imgs/language4.png"
                 },
                 korean: {
-                    "label": "КӘРІС ТІЛІ",
+                    "label": "КОРЕЙ ТІЛІ",
                     "course_duration": "",
                     "lessons_for_week": "",
                     "poster": "/static/imgs/language5.png"
