@@ -26,6 +26,7 @@ quill_modules = {
 base_product_form = {
     category: "",
     name: "",
+    author: "",
     poster: "",
     description: "",
     price: 0,
@@ -53,13 +54,7 @@ products_app = Vue.createApp({
         open_section() {
             this.products = []
 
-            if (this.current_section == "all_products") {
-                var products_filtration = {}
-            } else {
-                var products_filtration = {category: this.current_section}
-            }
-
-            ProductServices.get_products({products_filtration: JSON.stringify(products_filtration)})
+            ProductServices.get_products({products_filtration: JSON.stringify({})})
         },
         clear_form() {
             for (var key in this.product_form) {

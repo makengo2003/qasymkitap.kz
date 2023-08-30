@@ -7,13 +7,16 @@ choices = (("kz", "Қазақ әдебиеті"), ("world", "Әлем әдеби
 class Product(models.Model):
     category = models.CharField(max_length=50, choices=choices)
     name = models.CharField(max_length=100)
+    author = models.CharField(max_length=100, null=True)
     name_lower = models.CharField(max_length=500, null=True, editable=False, blank=True)
+    author_lower = models.CharField(max_length=500, null=True, editable=False, blank=True)
     poster = models.ImageField(upload_to="posters/")
     price = models.PositiveIntegerField()
     description = models.TextField()
 
     def save(self, *args, **kwargs):
         self.name_lower = self.name.lower() if self.name else None
+        self.author_lower = self.author.lower() if self.author else None
         return super().save(*args, **kwargs)
 
 

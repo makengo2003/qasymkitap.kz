@@ -40,6 +40,11 @@ body {
 	display: flex; align-items: center;
 }
 
+.cart-block .table-row .book-name p {
+    width: 100%;
+    margin-right: 10px;
+}
+
 .cart-block .book_img {
     background-position: center;
     background-repeat: no-repeat;
