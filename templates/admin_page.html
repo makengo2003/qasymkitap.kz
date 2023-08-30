@@ -97,7 +97,7 @@
 								<span>Аты</span>
 							</div>
 
-							<div class="categories_category">
+							<div class="categories_category" style="margin-left: auto">
 								<span>Бағасы</span>
 							</div>
 
@@ -105,15 +105,15 @@
 							</div>
 						</div>
 
-						<div v-for="product in products" class="categories_card_block" :id="'product_card_' + product.id">
+						<div v-for="product in products" class="categories_card_block" style="justify-content: flex-start" :id="'product_card_' + product.id">
 							<div class="categories_photo" :style="{backgroundImage: 'url(/media/' + product.poster + ')'}">
 							</div>
 
 							<div class="categories_name categories_category">
-								<span>${ product.name }</span>
+								<span style="width: 490px">${ product.name }</span>
 							</div>
 
-							<div class="categories_category">
+							<div class="categories_category" style="padding-left: 20px">
 								<span>${ product.price }</span>
 							</div>
 
@@ -262,8 +262,8 @@
 								<span>${ request.created_at }</span>
 							</div>
 
-							<ul class="categories_category" style="font-size: 13px" v-if="current_section == 'books'" v-html="request.request_text"></ul>
-							<ul class="categories_category" style="font-size: 13px" v-if="current_section == 'languages'" v-html="request.request_text"></ul>
+							<ul class="categories_category" style="font-size: 13px; padding-left: 0px; width: 290px; padding-right: 20px" v-if="current_section == 'books'" v-html="request.request_text"></ul>
+							<ul class="categories_category" style="font-size: 13px; padding-left: 0px; width: 290px; padding-right: 20px" v-if="current_section == 'languages'" v-html="request.request_text"></ul>
 
 							<div class="categories_edit">
 								<a v-if="!request.is_accepted" @click="accept_request(request)" style="background-color: green">Қабылдау</a>
@@ -283,6 +283,9 @@
 					</div>
 					<div class="set">
 						<a @click="open_languages_form()">Тіл курстары</a>
+					</div>
+					<div class="set">
+						<a @click="open_tg_ids_form()">Telegram IDs</a>
 					</div>
 					<div class="set">
 						<a @click="open_carousel_images_form()">Карусель</a>
@@ -310,6 +313,27 @@
 
 						<div class="edit_btns">
 							<button type="submit" class="save" :disabled="!languages_form_is_opened">Сақтау</button>
+						</div>
+					</form>
+				</div>
+
+
+
+
+
+				<div class="contacts_block" v-if="tg_ids_form_is_opened">
+					<div class="go_back">
+						<a @click="tg_ids_form_is_opened = false">Артқа</a>
+					</div>
+
+					<form @submit.prevent="save_tg_ids()" class="carousel_s_block">
+						{% csrf_token %}
+						<div class="contacts">
+							<textarea v-model="tg_ids_form" cols="30" rows="10"></textarea>
+						</div>
+
+						<div class="edit_btns">
+							<button type="submit" class="save" :disabled="!tg_ids_form_is_opened">Сақтау</button>
 						</div>
 					</form>
 				</div>

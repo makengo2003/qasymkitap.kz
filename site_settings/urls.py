@@ -5,6 +5,8 @@ from .views import *
 urlpatterns = [
     path("get_languages/", get_languages_view, name="get_languages"),
     path("save_languages/", save_languages_view, name="save_languages"),
+    path("get_tg_ids/", get_tg_ids_view, name="get_tg_ids"),
+    path("save_tg_ids/", save_tg_ids_view, name="save_tg_ids"),
     path("get_base_site_settings/", get_base_site_settings_view, name="get_base_site_settings"),
     path("save_base_site_settings/", save_base_site_settings_view, name="save_base_site_settings"),
     path("get_carousel_images/", get_carousel_images_view, name="get_carousel_images"),

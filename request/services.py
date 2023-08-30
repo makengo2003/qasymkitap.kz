@@ -1,3 +1,5 @@
+from threading import Thread
+
 import requests
 
 from typing import Mapping, MutableMapping
@@ -9,6 +11,21 @@ from project.settings import BOT_TOKEN
 from site_settings import services as site_settings_services
 from .serializers import RequestSerializer
 from .models import Request
+
+
+def send_tg_messages(text):
+    tg_ids = site_settings_services.get_tg_ids()
+
+    for tg_id in tg_ids:
+        response = requests.post(
+            f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage',
+            data={
+                'chat_id': tg_id,
+                'text': text,
+                'parse_mode': 'html'
+            }
+        )
+        print(response.status_code, response.json())
 
 
 def leave_request(data: MutableMapping) -> None:
@@ -35,23 +52,20 @@ def leave_request(data: MutableMapping) -> None:
         serializer.validated_data["request_text"] = request_text
 
     request = serializer.save()
+    text = (f"<b>Номер заказа №{request.id}\n</b>"
+            f"<b>Тип:</b> {request.get_category_display()}\n"
+            f"<b>ФИО:</b> {request.fullname}\n",
+            f"<b>Номер телефона:</b> {request.phone_number}\n"
+            f"<b>Время:</b> {request.created_at}\n")
+    text = "\n".join(text)
 
-    # contacts = site_settings_services.get_contacts()
-    # email = None
-    #
-    # for contact in contacts.data:
-    #     if contact["type"] == "email":
-    #         email = contact["contact"]
-    #         break
-    #
-    # requests.post(
-    #     f'https://api.telegram.org/bot{BOT_TOKEN}/sendMessage',
-    #     data={
-    #         'chat_id': email,
-    #         'text': request.request_text,
-    #         'parse_mode': 'html'
-    #     }
-    # )
+    if request.category == "languages":
+        text += f"<b>Тіл:</b> {request.request_text}"
+    elif request.category == "books":
+        cart_text = request.request_text.replace("<li>", "").replace("</li>", "\n")
+        text += f'\n<b>Себетте:</b>\n{cart_text}'
+
+    Thread(daemon=True, target=send_tg_messages, args=(text,)).start()
 
 
 def get_requests(category) -> RequestSerializer:

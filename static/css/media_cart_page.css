@@ -62,4 +62,21 @@
 	.cart-block .first-row .book-sum {
 		margin-right: 4px;
 	}
+
+	.cart-block .first-block {
+	    overflow: auto;
+	}
+
+	.table {
+	    width: 500px;
+	}
+
+	.cart-block .table-row .book-name {
+	    margin-right: 15px;
+        width: 37%;
+	}
+
+	.cart-block .book_img {
+	    min-width: 30px;
+	}
 }
