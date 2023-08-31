@@ -7,7 +7,14 @@
 {% endblock %}
 
 {% block body %}
-	<div class="block">
+	<div class="block" id="sliders-block-main-page">
+		<div class="container" style="margin-bottom: 20px">
+			<form action="/search/">
+				<input type="text" placeholder="Кітап аты/авторы" name="search_input" value="{{ request.GET.search_input }}">
+				<button><span>Іздеу</span></button>
+			</form>
+		</div>
+
 		<div class="container slider_block">
 			<div class="sliders">
 				<div class="slider_indexes_block" style="display: none">
@@ -42,10 +49,6 @@
 
 	<div class="block" id="books-block-main-page">
 		<div class="container books-block">
-			<form action="/search/">
-				<input type="text" placeholder="Кітап аты/авторы" name="search_input" value="{{ request.GET.search_input }}">
-				<button><span>Іздеу</span></button>
-			</form>
 			<h3>ӨЗ ТАЛҒАМЫҢЫЗҒА САЙ КІТАП ТАҢДАҢЫЗ</h3>
 
 			{% include 'book_cards.html' %}
@@ -61,8 +64,8 @@
 			<img src="{% static 'imgs/certificate_img.png' %}" alt="">
 			<div class="text">
 				<h1>Жақыныңызға сертификат сыйлаңыз</h1>
-				<p>Оқырман дүкендер желісінен 2000, 5000 теңгелік сертификат алып, жақыныңызға сыйлаңыз</p>
-				<button onclick="open_certificates_request_form()">СЕРТИФИКАТ АЛУ</button>
+				<p>Оқырман дүкендер желісінен 2000, 10000 теңгелік сертификат алып, жақыныңызға сыйлаңыз</p>
+				<button onclick="open_certificates_request_form()">Сертификат алу</button>
 			</div>
 		</div>
 	</div>

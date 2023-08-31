@@ -15,7 +15,7 @@
 
 @media(max-width: 850px) {
 	.container {
-		width: 650px;
+		width: 600px;
 	}
 
 	.navbar form, .navbar .wishlist-btn, .navbar .cart-btn {
@@ -46,8 +46,14 @@
 	}
 }
 
+@media(max-width: 630px) {
+    .container {
+        width: 480px;
+    }
+}
 
-@media(max-width: 670px) {
+
+@media(max-width: 500px) {
 	.container {
 		width: 350px;
 	}

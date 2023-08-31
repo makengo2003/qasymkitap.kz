@@ -87,13 +87,39 @@
 
 @media(max-width: 850px) {
 	.book_cards .book_card {
-		width: 159px;
+		width: 142.6px;
+	}
+
+	.book_cards .book_card .book_name {
+	    margin-top: 15px;
+        font-size: 13px;
+        min-height: 33px;
+	}
+
+	.book_cards .book_card .book_category {
+	    font-size: 11px;
+	}
+
+	.book_cards .book_card .book_price {
+	    font-size: 13px;
+	    margin: 1px 0 7px 0;
 	}
 }
 
 
-@media(max-width: 670px) {
+@media(max-width: 630px) {
+    .book_cards .book_card {
+		width: 186px;
+	}
+}
+
+
+@media(max-width: 500px) {
     .book_cards .book_card {
 		width: 121px;
+	}
+
+	.book_cards .book_card .book_name {
+	    margin-top: 12px;
 	}
 }
