@@ -241,6 +241,10 @@
 								<span>Уақыты</span>
 							</div>
 
+							<div class="categories_category">
+								<span>Қабылданған уақыт</span>
+							</div>
+
 							<div class="categories_category" v-if="current_section == 'books'">
 								<span>Себетте</span>
 							</div>
@@ -264,6 +268,10 @@
 
 							<div class="categories_category">
 								<span>${ request.created_at }</span>
+							</div>
+
+							<div class="categories_category">
+								<span>${ request.accepted_at }</span>
 							</div>
 
 							<ul class="categories_category" style="font-size: 13px; padding-left: 0px; width: 290px; padding-right: 20px" v-if="current_section == 'books'" v-html="request.request_text"></ul>

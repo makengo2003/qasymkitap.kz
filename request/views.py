@@ -22,8 +22,8 @@ def get_requests_view(request) -> Response:
 @api_view(["POST"])
 @permission_classes([IsAdminUser])
 def accept_request_view(_, request_id: int) -> Response:
-    services.accept_request(request_id)
-    return Response({"success": True})
+    accepted_at = services.accept_request(request_id)
+    return Response({"success": True, "accepted_at": accepted_at})
 
 
 @api_view(["GET"])
