@@ -29,6 +29,7 @@ requests_app = Vue.createApp({
                 }
             }).then((response) => {
                 request.is_accepted = true
+                request.accepted_at = response.data["accepted_at"]
             })
         },
         check_new_requests() {

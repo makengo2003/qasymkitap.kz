@@ -102,7 +102,10 @@ settings_app = Vue.createApp({
             this.languages_form_is_opened = true
 
             SiteSettingsServices.get_languages().then((data) => {
-                this.languages_form = data
+                for (item in data) {
+                    this.languages_form[item]["course_duration"] = data[item]["course_duration"]
+                    this.languages_form[item]["lessons_for_week"] = data[item]["lessons_for_week"]
+                }
             })
         },
         open_tg_ids_form() {

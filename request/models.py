@@ -8,5 +8,6 @@ class Request(models.Model):
     fullname = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=50)
     created_at = models.DateTimeField(default=datetime_now, editable=False)
+    accepted_at = models.DateTimeField(null=True)
     is_accepted = models.BooleanField(default=False)
     request_text = models.TextField(default="", blank=True)

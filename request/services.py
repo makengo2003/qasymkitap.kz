@@ -1,3 +1,4 @@
+from datetime import datetime
 from threading import Thread
 
 import requests
@@ -8,6 +9,7 @@ from django.db.models import Case, When, Value, BooleanField, Sum
 
 from product.models import Product
 from project.settings import BOT_TOKEN
+from project.utils import datetime_now
 from site_settings import services as site_settings_services
 from .serializers import RequestSerializer
 from .models import Request
@@ -73,8 +75,10 @@ def get_requests(category) -> RequestSerializer:
     return RequestSerializer(requests_objs, many=True)
 
 
-def accept_request(request_id: int) -> None:
-    Request.objects.filter(id=request_id).update(is_accepted=True)
+def accept_request(request_id: int) -> str:
+    dt_now = datetime_now()
+    Request.objects.filter(id=request_id).update(is_accepted=True, accepted_at=dt_now)
+    return dt_now.strftime("%d.%m.%Y, %H:%M")
 
 
 def check_new_requests():
