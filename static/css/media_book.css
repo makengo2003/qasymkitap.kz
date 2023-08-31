@@ -14,9 +14,18 @@
 	.book-block .text {
 		width: 390px;
 	}
+
+	.book-block .action_btns button {
+	    padding-left: 28px;
+	    padding-right: 28px;
+	}
+
+	.book-block .action_btns input {
+	    width: 35px;
+	}
 }
 
-@media(max-width: 670px) {
+@media(max-width: 630px) {
 	.book-block .options {
 		display: none;
 	}
@@ -67,4 +76,14 @@
 		margin-bottom: 0;
 		padding: 2px 10px;
 	}
+
+	.book-block .book_poster_img {
+	    width: 160px;
+	}
+}
+
+@media(max-width: 500px) {
+    .book-block .book_poster_img {
+        width: 220px;
+    }
 }

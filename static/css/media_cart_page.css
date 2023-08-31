@@ -14,11 +14,11 @@
 	}
 
 	.cart-block .table-row .delete-btn {
-		height: 19px;
+		height: 17px;
 	}
 }
 
-@media(max-width: 670px) {
+@media(max-width: 630px) {
 	.cart-block .first-block, .cart-block .second-block {
 		width: 89%;
 	}

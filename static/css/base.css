@@ -19,6 +19,12 @@ body {
     flex-direction: column;
 }
 
+body {
+    background-color: white;
+    color: black;
+    /* Другие стили для белого режима */
+}
+
 body, button, input[type="text"]::placeholder, input[type="text"], p {
 	margin: 0;
 	font-family: "Geometria-Regular";
@@ -57,13 +63,13 @@ h1, h2, h3, h4, h5, h6, b {
 	margin-right: 40px;
 }
 
-.navbar form, #books-block-main-page form {
+.navbar form, #sliders-block-main-page form {
 	border: 1px solid #F15D5B;
 	border-radius: 20px;
 	padding: 3px;
 }
 
-.navbar form input[type="text"], #books-block-main-page form input[type="text"] {
+.navbar form input[type="text"], #sliders-block-main-page form input[type="text"] {
 	border: 0px;
 	outline: none;
 	height: 30px;
@@ -73,12 +79,12 @@ h1, h2, h3, h4, h5, h6, b {
 	border-radius: 20px;
 }
 
-.navbar form input[type="text"]::placeholder, #books-block-main-page form input[type="text"]::placeholder {
+.navbar form input[type="text"]::placeholder, #sliders-block-main-page form input[type="text"]::placeholder {
 	color: #F15D5B;
 	font-size: 13px;
 }
 
-.navbar form button, #books-block-main-page form button {
+.navbar form button, #sliders-block-main-page form button {
 	border: none;
 	border-radius: 20px;
 	height: 32px;
@@ -89,12 +95,12 @@ h1, h2, h3, h4, h5, h6, b {
 	font-size: 13px;
 }
 
-#books-block-main-page form {
+#sliders-block-main-page form {
     display: none;
     align-items: center;
 }
 
-#books-block-main-page form button {
+#sliders-block-main-page form button {
     margin-left: auto;
 }
 
@@ -163,7 +169,7 @@ h1, h2, h3, h4, h5, h6, b {
 }
 
 .footer-container .cities p {
-	margin-bottom: 50px;
+	margin-bottom: 30px;
 }
 
 .footer-container {
