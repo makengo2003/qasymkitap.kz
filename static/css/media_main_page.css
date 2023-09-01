@@ -33,7 +33,7 @@
 	}
 
 	.offices-block img {
-		width: 500px;
+		width: 590px;
 		height: 330px;
 	}
 
@@ -74,7 +74,7 @@
 	}
 
 	.certificate-block .text {
-	    margin-top: 20px;
+	    margin-top: 10px;
 	}
 
 	.certificate-block .text h1 {
@@ -100,7 +100,7 @@
 	}
 
 	.languages-block .language_cards .language_card {
-	    width: 212.5px;
+	    width: 100%;
 	}
 
 	.languages-block .language_cards .language_card h1 {
@@ -112,11 +112,11 @@
 	}
 
 	.languages-block .language_cards .language_card button {
-		font-size: 13px;
+
 	}
 
 	.languages-block {
-		height: 920px;
+		height: 1670px;
 	}
 
 	.coffee-block {
@@ -166,10 +166,6 @@
     .certificate-block button {
         font-size: 11px;
         width: 130px;
-    }
-
-	.languages-block .language_cards .language_card {
-	    width: 100%;
     }
 
 	.languages-block .text {
@@ -288,5 +284,10 @@
 	.offices-block .mobile_kz_map_img {
         width: 350px;
         height: 200px;
+	}
+
+	.certificate-block button {
+	    width: 190px;
+	    font-size: 17px;
 	}
 }
