@@ -28,7 +28,7 @@ DEBUG = False
 if DEBUG:
     SITE_DOMAIN = "127.0.0.1:8000"
 else:
-    SITE_DOMAIN = "www.qasymkitap.kz"
+    SITE_DOMAIN = "qasymkitap.kz"
 
 ALLOWED_HOSTS = [SITE_DOMAIN, "127.0.0.1", "192.168.216.119", "46.8.43.138"]
 
