@@ -207,19 +207,16 @@
 		<div style="display: none" id="requests">
 			<div class="main_container all_goods_container">
 				<div class="main_container_sections">
-					<label v-if="there_are_new_requests.books" for="books_requests_radio" style="font-size: 30px; margin-right: 5px; color: red">*</label>
 					<div class="main_container_section">
 						<input type="radio" id="books_requests_radio" name="requests_container_section" value="books" v-model="current_section" @change="open_section()">
 						<label for="books_requests_radio">Кітаптар</label>
 					</div>
 
-					<label v-if="there_are_new_requests.languages" for="books_requests_radio" style="font-size: 30px; margin-right: 5px; color: red">*</label>
 					<div class="main_container_section">
 						<input type="radio" id="languages_requests_radio" name="requests_container_section" value="languages" v-model="current_section" @change="open_section()">
 						<label for="languages_requests_radio">Тіл курстары</label>
 					</div>
 
-					<label v-if="there_are_new_requests.certificates" for="books_requests_radio" style="font-size: 30px; margin-right: 5px; color: red">*</label>
 					<div class="main_container_section">
 						<input type="radio" id="certificates_requests_radio" name="requests_container_section" value="certificates" v-model="current_section" @change="open_section()">
 						<label for="certificates_requests_radio">Сертификаттар</label>

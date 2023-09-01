@@ -2,12 +2,7 @@ requests_app = Vue.createApp({
     data() {
         return {
             requests: [],
-            current_section: "books",
-            there_are_new_requests: {
-                books: false,
-                languages: false,
-                certificates: false,
-            }
+            current_section: "books"
         }
     },
     methods: {
@@ -31,16 +26,7 @@ requests_app = Vue.createApp({
                 request.is_accepted = true
                 request.accepted_at = response.data["accepted_at"]
             })
-        },
-        check_new_requests() {
-            axios.get("/api/request/check_new_requests/").then((response) => {
-                this.there_are_new_requests = response.data
-            })
         }
-    },
-    mounted() {
-        this.check_new_requests()
-        setInterval(this.check_new_requests, 3000)
     }
 })
 
