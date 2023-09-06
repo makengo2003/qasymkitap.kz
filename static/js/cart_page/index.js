@@ -27,7 +27,7 @@ cart_app = Vue.createApp({
                     "X-CSRFToken": $cookies.get("csrftoken"),
                 }
             }).then((response) => {
-                alert("Қабылданды, бірнеше минут ішінде менеджерлер хабарласады")
+                sweetalert("Қабылданды, бірнеше минут ішінде менеджерлер хабарласады")
                 close_request_form()
                 localStorage.removeItem("cart")
                 window.location.href = "/"

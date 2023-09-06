@@ -66,7 +66,7 @@ function add_to_cart(book_id, count=1) {
         localStorage.setItem("cart", JSON.stringify([{"book_id": book_id, "count": count}]))
     }
 
-    alert("Себетке салынды")
+    sweetalert("Себетке салынды")
 }
 
 function book_in_wishlist(book_id) {
@@ -121,7 +121,15 @@ function leave_request_window_submit(event) {
             "X-CSRFToken": $cookies.get("csrftoken"),
         }
     }).then((response) => {
-        alert("Қабылданды, бірнеше минут ішінде менеджерлер хабарласады")
+        sweetalert("Қабылданды, бірнеше минут ішінде менеджерлер хабарласады")
         close_request_form()
     })
+}
+
+function sweetalert(title) {
+    Swal.fire(
+      'Qasym kitaphanasy',
+      title,
+      'success'
+    )
 }
